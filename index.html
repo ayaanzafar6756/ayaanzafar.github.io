@@ -1,308 +1,1362 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Ayaan Zafar | Cybersecurity Student & Web Developer</title>
-<meta name="description" content="Portfolio of Ayaan Khan, a cybersecurity student at Salim Habib University and web developer in Karachi. Websites, AI chatbots and AI agents for clients.">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<!-- Google Fonts -->
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=DM+Sans:opsz,wght@9..40,400..700&display=swap" rel="stylesheet">
+  <meta name="description"
+        content="Ayaan Zafar — Cybersecurity, Web Development and AI Portfolio.">
 
-<!-- Your CSS file -->
-<link rel="stylesheet" href="style.css">
+  <title>Ayaan Zafar — Cybersecurity • Web • AI</title>
 
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-<script>
-  /* Runs before the page paints: marks JS as available and applies the saved theme. */
-  document.documentElement.classList.add('js');
-  try {
-    var t = localStorage.getItem('ayaan-theme');
-    if (t === 'light' || t === 'dark') document.documentElement.setAttribute('data-theme', t);
-  } catch (e) {}
-</script>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+
+  <script>
+    (() => {
+      const saved = localStorage.getItem("ayaan-theme");
+      document.documentElement.dataset.theme = saved || "dark";
+    })();
+  </script>
 </head>
+
 <body>
 
-<!-- Shield shape used to frame the portrait -->
-<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
-  <defs>
-    <clipPath id="shieldClip" clipPathUnits="objectBoundingBox">
-      <path d="M0.5,0 L0.96,0.1 C1,0.11 1,0.12 1,0.16 V0.52 C1,0.78 0.76,0.92 0.5,1 C0.24,0.92 0,0.78 0,0.52 V0.16 C0,0.12 0,0.11 0.04,0.1 Z"/>
-    </clipPath>
-  </defs>
-</svg>
+  <!-- PAGE LOADER -->
+  <div class="page-loader" aria-hidden="true">
+    <div class="loader-mark">
+      AZ<span>.</span>
+    </div>
 
-<a class="skip" href="#main">Skip to content</a>
+    <div class="loader-line">
+      <i></i>
+    </div>
+  </div>
 
-<!-- ================= HEADER ================= -->
-<header class="site-header" id="siteHeader">
-  <div class="wrap bar">
-    <a class="brand" href="#top" aria-label="Ayaan Zafar, back to top">
-      <svg viewBox="0 0 22 26" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round" aria-hidden="true">
-        <path d="M11 1.5 20 4.6v8.1c0 5.2-3.7 9.2-9 11.8-5.3-2.6-9-6.6-9-11.8V4.6z"/>
-        <path d="m7.3 12.8 2.7 2.7 4.9-5.3" stroke-linecap="round"/>
-      </svg>
-      Ayaan Zafar
+  <!-- BACKGROUND EFFECTS -->
+  <div class="noise"></div>
+
+  <div class="aurora aurora-a"></div>
+  <div class="aurora aurora-b"></div>
+
+  <canvas id="particles"></canvas>
+
+  <div class="cursor-glow"></div>
+
+  <!-- SCROLL PROGRESS -->
+  <div class="scroll-progress">
+    <span id="scrollProgress"></span>
+  </div>
+
+
+  <!-- HEADER -->
+  <header class="site-header" id="siteHeader">
+
+    <a href="#home" class="brand">
+
+      <span class="brand-icon">
+        AZ
+      </span>
+
+      <span class="brand-copy">
+        <strong>Ayaan Zafar</strong>
+        <small>Cyber • Web • AI</small>
+      </span>
+
     </a>
-    <nav aria-label="Main">
-      <ul class="nav-links" id="navLinks">
-        <li><a href="#about">About</a></li>
-        <li><a href="#education">Education</a></li>
-        <li><a href="#skills">Skills</a></li>
-        <li><a href="#services">Services</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
+
+
+    <nav class="nav" id="nav">
+
+      <a href="#home" class="active">
+        Home
+      </a>
+
+      <a href="#about">
+        About
+      </a>
+
+      <a href="#education">
+        Education
+      </a>
+
+      <a href="#skills">
+        Skills
+      </a>
+
+      <a href="#services">
+        Services
+      </a>
+
+      <a href="#contact">
+        Contact
+      </a>
+
     </nav>
-    <div class="bar-actions">
-      <button class="icon-btn" id="themeBtn" type="button" aria-label="Switch colour theme"></button>
-      <button class="icon-btn menu-btn" id="menuBtn" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="navLinks">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+
+
+    <div class="header-actions">
+
+      <button
+        class="icon-btn"
+        id="themeBtn"
+        type="button">
+        ☾
       </button>
+
+      <a
+        href="#contact"
+        class="mini-cta magnetic">
+        Let's talk
+        <span>↗</span>
+      </a>
+
+      <button
+        class="menu-btn"
+        id="menuBtn"
+        type="button"
+        aria-label="Open menu"
+        aria-expanded="false">
+
+        <span></span>
+        <span></span>
+
+      </button>
+
     </div>
-  </div>
-  <div class="progress" aria-hidden="true"></div>
-</header>
 
-<main id="main">
+  </header>
 
-  <!-- ================= HERO ================= -->
-  <section class="hero" id="top">
-    <div class="orb orb-a" aria-hidden="true"></div>
-    <div class="orb orb-b" aria-hidden="true"></div>
 
-    <div class="wrap hero-grid">
 
-      <!-- Portrait -->
-      <div class="portrait" id="portrait">
-        <div class="tilt" id="tilt">
-          <div class="shield-wrap">
-            <div class="shield">
-              <div class="shield-inner">
-                <img id="photo" src="1761587680465.jpg" width="720" height="900" alt="Portrait of Ayaan Khan in a navy suit" fetchpriority="high">
-              </div>
+  <main>
+
+    <!-- ================= HERO ================= -->
+
+    <section
+      class="hero section"
+      id="home">
+
+      <div class="container hero-grid">
+
+        <div class="hero-copy">
+
+          <div class="eyebrow reveal">
+
+            <span class="status-dot"></span>
+
+            Available for selected projects
+
+            <span class="eyebrow-line"></span>
+
+          </div>
+
+
+          <div class="hero-kicker reveal delay-1">
+
+            CYBERSECURITY
+            <b>•</b>
+
+            WEB DEVELOPMENT
+            <b>•</b>
+
+            AI
+
+          </div>
+
+
+          <h1 class="hero-title reveal delay-2">
+
+            Building digital experiences
+
+            <em>
+              with a security mindset.
+            </em>
+
+          </h1>
+
+
+          <p class="hero-text reveal delay-3">
+
+            I'm Ayaan Zafar — a cybersecurity student and
+            creative developer focused on modern websites,
+            AI-powered experiences, and secure digital builds.
+
+          </p>
+
+
+          <div class="hero-actions reveal delay-4">
+
+            <a
+              href="#contact"
+              class="btn btn-primary magnetic">
+
+              Start a project
+
+              <span>↗</span>
+
+            </a>
+
+
+            <a
+              href="#about"
+              class="btn btn-ghost magnetic">
+
+              Explore my work
+
+              <span>↓</span>
+
+            </a>
+
+          </div>
+
+
+          <div class="hero-stats reveal delay-5">
+
+            <div>
+              <strong>03</strong>
+              <span>Core disciplines</span>
             </div>
+
+            <div>
+              <strong>∞</strong>
+              <span>Ideas to build</span>
+            </div>
+
+            <div>
+              <strong>24/7</strong>
+              <span>Curiosity mode</span>
+            </div>
+
           </div>
-          <span class="float-badge fb-a"><i aria-hidden="true"></i>Cybersecurity</span>
-          <span class="float-badge fb-b"><i aria-hidden="true"></i>AI Agents</span>
-          <span class="float-badge fb-c"><i aria-hidden="true"></i>Web Development</span>
-        </div>
-        <span class="status"><i aria-hidden="true"></i>Open to client projects</span>
-      </div>
 
-      <!-- Intro text -->
-      <div class="intro">
-        <h1 id="name" data-final="Ayaan Zafar">Ayaan Zafar</h1>
-        <p class="role rise" style="--i:3">Cybersecurity student and web developer</p>
-        <p class="typed rise" style="--i:4" aria-hidden="true">I build <span id="typed">responsive websites</span><span class="caret"></span></p>
-        <p class="pitch rise" style="--i:5">I build clean, fast websites and AI chatbots for clients, and I look at every project the way a security student does: what could go wrong, and how do I prevent it?</p>
-        <div class="cta-row rise" style="--i:6">
-          <a class="btn btn-primary" href="#contact">Hire me</a>
-          <a class="btn btn-ghost" href="https://www.linkedin.com/in/ayaan-khan-28b57442a" target="_blank" rel="noopener noreferrer">
-            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5ZM3 9.75h4v11.5H3V9.75Zm6.5 0h3.83v1.57h.05c.53-1 1.84-2.07 3.79-2.07 4.05 0 4.8 2.66 4.8 6.12v5.88h-4v-5.2c0-1.24-.02-2.83-1.73-2.83-1.73 0-2 1.35-2 2.74v5.29h-4V9.75Z"/></svg>
-            LinkedIn profile
-          </a>
         </div>
-      </div>
 
-    </div>
-  </section>
 
-  <!-- ================= ABOUT ================= -->
-  <section class="section" id="about">
-    <div class="wrap">
-      <div class="section-head" data-reveal>
-        <h2>About me</h2>
-      </div>
-      <div class="about-grid">
-        <div class="about-copy" data-reveal style="--d:80ms">
-          <p>I'm a cybersecurity student at Salim Habib University in Karachi. Alongside my degree, I completed a six-month ADSE diploma at Aptech, where I learned to build websites with HTML, CSS, JavaScript and Bootstrap, and to work with AI chatbots and AI agents.</p>
-          <p>I also finished a one-year diploma in Advanced English Language, so I can explain technical work to clients clearly, in writing and in conversation.</p>
-          <p>I work consistently and I care about the result. My goal on every project is simple: deliver what the client expects, on time, and make sure it works.</p>
-        </div>
-        <div class="expect">
-          <h3 data-reveal style="--d:120ms">What clients can expect</h3>
-          <div class="expect-item" data-reveal style="--d:200ms">
-            <strong>Consistent work</strong>
-            <span>Steady progress and regular updates, not silence followed by a surprise.</span>
+
+        <!-- HERO VISUAL -->
+
+        <div class="hero-visual reveal delay-2">
+
+          <div class="visual-orbit orbit-1"></div>
+          <div class="visual-orbit orbit-2"></div>
+
+
+          <div
+            class="hero-card tilt-card"
+            id="portraitCard">
+
+            <div class="card-topline">
+
+              <span>
+                SECURE / CREATIVE
+              </span>
+
+              <span>
+                01—26
+              </span>
+
+            </div>
+
+
+            <div class="portrait-wrap">
+
+              <img
+                src="1761587680465.jpg"
+                alt="Ayaan Zafar">
+
+              <div class="portrait-shine"></div>
+
+            </div>
+
+
+            <div class="hero-card-bottom">
+
+              <div>
+
+                <small>
+                  FOCUS
+                </small>
+
+                <strong>
+                  Security × Design
+                </strong>
+
+              </div>
+
+              <div class="arrow-circle">
+                ↗
+              </div>
+
+            </div>
+
           </div>
-          <div class="expect-item" data-reveal style="--d:300ms">
-            <strong>Clear communication</strong>
-            <span>Plain English, honest answers, and no jargon you did not ask for.</span>
+
+
+          <!-- FLOATING CYBER CARD -->
+
+          <div class="float-chip chip-cyber">
+
+            <span class="chip-icon">
+              ⌁
+            </span>
+
+            <div>
+
+              <small>
+                BUILDING
+              </small>
+
+              <strong>
+                Cyber Security
+              </strong>
+
+            </div>
+
           </div>
-          <div class="expect-item" data-reveal style="--d:400ms">
-            <strong>Security-minded builds</strong>
-            <span>My cybersecurity studies shape how I handle forms, inputs and settings.</span>
+
+
+          <!-- FLOATING AI CARD -->
+
+          <div class="float-chip chip-ai">
+
+            <span class="chip-icon">
+              ✦
+            </span>
+
+            <div>
+
+              <small>
+                EXPLORING
+              </small>
+
+              <strong>
+                AI Agents
+              </strong>
+
+            </div>
+
           </div>
-        </div>
-      </div>
-    </div>
-  </section>
 
-  <!-- ================= EDUCATION ================= -->
-  <section class="section" id="education">
-    <div class="wrap">
-      <div class="section-head" data-reveal>
-        <h2>Education and training</h2>
-        <p>From newest to earliest.</p>
-      </div>
-      <ol class="timeline" id="timeline">
-        <li data-current data-reveal>
-          <h3>Cyber Security</h3>
-          <p class="where">Salim Habib University, Karachi</p>
-          <p class="detail">Studying how systems are attacked and defended, and applying it to the software I build.</p>
-          <span class="tag">Currently studying</span>
-        </li>
-        <li data-reveal>
-          <h3>ADSE Diploma</h3>
-          <p class="where">Aptech</p>
-          <p class="detail">Learned HTML, CSS, JavaScript and Bootstrap for building websites, plus AI chatbots and AI agents.</p>
-          <span class="tag">6 months</span>
-        </li>
-        <li data-reveal>
-          <h3>Diploma in Advanced English Language</h3>
-          <p class="detail">Strong written and spoken English for working directly with clients.</p>
-          <span class="tag">1 year</span>
-        </li>
-        <li data-reveal>
-          <h3>Intermediate in Pre-Engineering</h3>
-          <p class="detail">A foundation in mathematics and physics that supports my technical thinking.</p>
-          <span class="tag">Completed</span>
-        </li>
-      </ol>
-    </div>
-  </section>
 
-  <!-- ================= SKILLS ================= -->
-  <section class="section" id="skills">
-    <div class="wrap">
-      <div class="section-head" data-reveal>
-        <h2>Skills</h2>
-        <p>The tools I use to turn a client's idea into something that works.</p>
-      </div>
-      <div class="skills-grid">
-        <div class="skill-group" data-reveal>
-          <h3>Web development</h3>
-          <p>Building responsive websites from scratch.</p>
-          <ul class="chips">
-            <li>HTML</li><li>CSS</li><li>JavaScript</li><li>Bootstrap</li><li>Responsive layouts</li>
-          </ul>
-        </div>
-        <div class="skill-group" data-reveal style="--d:120ms">
-          <h3>Artificial intelligence</h3>
-          <p>Tools that answer questions and handle repetitive work.</p>
-          <ul class="chips">
-            <li>AI chatbots</li><li>AI agents</li>
-          </ul>
-        </div>
-        <div class="skill-group" data-reveal>
-          <h3>Security</h3>
-          <p>Currently studying at university.</p>
-          <ul class="chips">
-            <li>Cybersecurity fundamentals</li><li>Secure-minded development</li>
-          </ul>
-        </div>
-        <div class="skill-group" data-reveal style="--d:120ms">
-          <h3>Working with clients</h3>
-          <p>Reliable delivery and easy communication.</p>
-          <ul class="chips">
-            <li>Advanced English</li><li>Consistent delivery</li><li>Client focus</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
+          <div class="code-orb">
+            &lt;/&gt;
+          </div>
 
-  <!-- ================= SERVICES ================= -->
-  <section class="section" id="services">
-    <div class="wrap">
-      <div class="section-head" data-reveal>
-        <h2>How I can help</h2>
-        <p>Tell me what you need. If it fits one of these, we can start right away.</p>
-      </div>
-      <div>
-        <article class="service" data-reveal>
-          <h3>Websites</h3>
-          <p>Responsive business and personal websites built with HTML, CSS, JavaScript and Bootstrap. They load quickly and look right on phones and desktops.</p>
-        </article>
-        <article class="service" data-reveal style="--d:90ms">
-          <h3>AI chatbots</h3>
-          <p>A chatbot for your website that answers common customer questions, so your visitors get help while you get on with your work.</p>
-        </article>
-        <article class="service" data-reveal style="--d:180ms">
-          <h3>AI agents</h3>
-          <p>Agents that take over repetitive tasks such as sorting information or preparing replies, saving you time every week.</p>
-        </article>
-        <article class="service" data-reveal style="--d:270ms">
-          <h3>Security-minded builds</h3>
-          <p>I bring my cybersecurity studies into each project by checking forms, user input and settings for common weaknesses before anything goes live.</p>
-        </article>
-      </div>
-    </div>
-  </section>
+        </div>
 
-  <!-- ================= CONTACT ================= -->
-  <section class="section" id="contact">
-    <div class="wrap">
-      <div class="section-head" data-reveal>
-        <h2>Let's work together</h2>
-        <p>Send me a message with what you need built. I'll reply as soon as I can.</p>
       </div>
-      <div class="contact-grid">
-        <dl class="contact-list" data-reveal>
+
+
+      <div class="scroll-cue">
+
+        <span>
+          SCROLL TO DISCOVER
+        </span>
+
+        <i></i>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- MARQUEE -->
+
+    <section class="marquee-strip">
+
+      <div class="marquee-track">
+
+        <span>CYBERSECURITY</span>
+        <b>✦</b>
+
+        <span>WEB DEVELOPMENT</span>
+        <b>✦</b>
+
+        <span>AI EXPERIENCES</span>
+        <b>✦</b>
+
+        <span>CYBERSECURITY</span>
+        <b>✦</b>
+
+        <span>WEB DEVELOPMENT</span>
+        <b>✦</b>
+
+        <span>AI EXPERIENCES</span>
+        <b>✦</b>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- ================= ABOUT ================= -->
+
+    <section
+      class="section about"
+      id="about">
+
+      <div class="container">
+
+        <div class="section-heading reveal">
+
           <div>
-            <dt>Email</dt>
-            <dd><a href="mailto:ayaankhan6765i@gmail.com">ayaankhan6765i@gmail.com</a></dd>
-          </div>
-          <div>
-            <dt>Phone and WhatsApp</dt>
-            <dd><a href="tel:+923352929917">+92 335 2929917</a></dd>
-          </div>
-          <div>
-            <dt>Location</dt>
-            <dd>Karachi, Pakistan</dd>
-          </div>
-          <div>
-            <dt>LinkedIn</dt>
-            <dd><a href="https://www.linkedin.com/in/ayaan-khan-28b57442a" target="_blank" rel="noopener noreferrer">Ayaan Khan</a></dd>
-          </div>
-        </dl>
 
-        <div class="composer" data-reveal style="--d:140ms">
-          <h3>Write to me</h3>
-          <div class="field">
-            <label for="fName">Your name</label>
-            <input id="fName" type="text" autocomplete="name">
+            <span class="section-number">
+              01 /
+            </span>
+
+            <span class="section-label">
+              ABOUT ME
+            </span>
+
           </div>
-          <div class="field">
-            <label for="fEmail">Your email</label>
-            <input id="fEmail" type="email" autocomplete="email">
-          </div>
-          <div class="field">
-            <label for="fMsg">What do you need?</label>
-            <textarea id="fMsg"></textarea>
-          </div>
-          <a class="btn btn-primary" id="sendBtn" href="mailto:ayaankhan6765i@gmail.com">Send by email</a>
-          <p class="hint">This opens your email app with your message ready to send.</p>
-          <a class="btn btn-ghost btn-gap" href="https://wa.me/923352929917" target="_blank" rel="noopener noreferrer">Message on WhatsApp</a>
+
+
+          <h2>
+
+            Curious by nature.
+
+            <br>
+
+            <em>
+              Security-minded by choice.
+            </em>
+
+          </h2>
+
         </div>
+
+
+        <div class="about-grid">
+
+
+          <div class="about-intro reveal">
+
+            <p class="lead">
+
+              I enjoy turning ideas into digital experiences
+              that feel <strong>fast, intentional and alive</strong>
+              — while keeping security in the conversation
+              from day one.
+
+            </p>
+
+
+            <p>
+
+              My current path combines cybersecurity education
+              with hands-on web development and an interest
+              in AI agents.
+
+              I'm constantly experimenting, learning and improving
+              the way technology can solve real problems.
+
+            </p>
+
+
+            <a
+              href="#contact"
+              class="text-link">
+
+              Let's build something useful
+
+              <span>↗</span>
+
+            </a>
+
+          </div>
+
+
+
+          <div class="about-cards">
+
+
+            <article
+              class="info-card spotlight reveal">
+
+              <span class="card-index">
+                01
+              </span>
+
+              <span class="mini-icon">
+                ⌘
+              </span>
+
+              <h3>
+                Cybersecurity
+              </h3>
+
+              <p>
+
+                Learning to approach digital products
+                with security fundamentals and safer
+                implementation in mind.
+
+              </p>
+
+            </article>
+
+
+
+            <article
+              class="info-card spotlight reveal delay-1">
+
+              <span class="card-index">
+                02
+              </span>
+
+              <span class="mini-icon">
+                ◈
+              </span>
+
+              <h3>
+                Web & UI
+              </h3>
+
+              <p>
+
+                Creating responsive interfaces with
+                thoughtful layouts, motion, interactions
+                and clean front-end code.
+
+              </p>
+
+            </article>
+
+
+
+            <article
+              class="info-card spotlight reveal delay-2">
+
+              <span class="card-index">
+                03
+              </span>
+
+              <span class="mini-icon">
+                ✦
+              </span>
+
+              <h3>
+                AI Exploration
+              </h3>
+
+              <p>
+
+                Exploring chatbots and AI agents that
+                make digital experiences more useful
+                and interactive.
+
+              </p>
+
+            </article>
+
+
+
+            <article
+              class="info-card spotlight reveal delay-3">
+
+              <span class="card-index">
+                04
+              </span>
+
+              <span class="mini-icon">
+                ↗
+              </span>
+
+              <h3>
+                Client Focus
+              </h3>
+
+              <p>
+
+                Clear communication, reliable delivery
+                and a practical mindset from idea
+                to final build.
+
+              </p>
+
+            </article>
+
+
+          </div>
+
+        </div>
+
       </div>
+
+    </section>
+
+
+
+    <!-- ================= EDUCATION ================= -->
+
+    <section
+      class="section education"
+      id="education">
+
+      <div class="container">
+
+        <div class="section-heading reveal">
+
+          <div>
+
+            <span class="section-number">
+              02 /
+            </span>
+
+            <span class="section-label">
+              EDUCATION
+            </span>
+
+          </div>
+
+
+          <h2>
+
+            The path behind
+
+            <br>
+
+            <em>
+              the perspective.
+            </em>
+
+          </h2>
+
+        </div>
+
+
+        <div class="timeline">
+
+
+          <article class="timeline-item reveal">
+
+            <span class="timeline-dot"></span>
+
+            <span class="timeline-year">
+              CURRENT
+            </span>
+
+            <div class="timeline-card spotlight">
+
+              <span class="timeline-no">
+                01
+              </span>
+
+              <h3>
+                Cyber Security
+              </h3>
+
+              <p>
+                Salim Habib University
+              </p>
+
+              <small>
+                Karachi, Pakistan
+              </small>
+
+            </div>
+
+          </article>
+
+
+
+          <article class="timeline-item reveal delay-1">
+
+            <span class="timeline-dot"></span>
+
+            <span class="timeline-year">
+              DIPLOMA
+            </span>
+
+            <div class="timeline-card spotlight">
+
+              <span class="timeline-no">
+                02
+              </span>
+
+              <h3>
+                ADSE
+              </h3>
+
+              <p>
+                Aptech
+              </p>
+
+              <small>
+                Advanced Diploma in Software Engineering
+              </small>
+
+            </div>
+
+          </article>
+
+
+
+          <article class="timeline-item reveal delay-2">
+
+            <span class="timeline-dot"></span>
+
+            <span class="timeline-year">
+              LANGUAGE
+            </span>
+
+            <div class="timeline-card spotlight">
+
+              <span class="timeline-no">
+                03
+              </span>
+
+              <h3>
+                Advanced English Language
+              </h3>
+
+              <p>
+                KELP Institute
+              </p>
+
+              <small>
+                One-year program
+              </small>
+
+            </div>
+
+          </article>
+
+
+
+          <article class="timeline-item reveal delay-3">
+
+            <span class="timeline-dot"></span>
+
+            <span class="timeline-year">
+              INTERMEDIATE
+            </span>
+
+            <div class="timeline-card spotlight">
+
+              <span class="timeline-no">
+                04
+              </span>
+
+              <h3>
+                Pre-Engineering
+              </h3>
+
+              <p>
+                Intermediate Education
+              </p>
+
+              <small>
+                Foundation in mathematics & science
+              </small>
+
+            </div>
+
+          </article>
+
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- ================= SKILLS ================= -->
+
+    <section
+      class="section skills"
+      id="skills">
+
+      <div class="container">
+
+        <div class="section-heading reveal">
+
+          <div>
+
+            <span class="section-number">
+              03 /
+            </span>
+
+            <span class="section-label">
+              CAPABILITIES
+            </span>
+
+          </div>
+
+
+          <h2>
+
+            Skills that connect
+
+            <br>
+
+            <em>
+              ideas to execution.
+            </em>
+
+          </h2>
+
+        </div>
+
+
+        <div class="skills-grid">
+
+
+          <article
+            class="skill-card spotlight reveal">
+
+            <div class="skill-head">
+
+              <span class="skill-num">
+                01
+              </span>
+
+              <span class="skill-icon">
+                &lt;/&gt;
+              </span>
+
+            </div>
+
+            <h3>
+              Web Development
+            </h3>
+
+            <p>
+              Responsive, animated and accessible
+              front-end experiences.
+            </p>
+
+            <div class="tags">
+
+              <span>HTML</span>
+              <span>CSS</span>
+              <span>JavaScript</span>
+              <span>Bootstrap</span>
+
+            </div>
+
+            <div class="skill-bar">
+              <i style="--w:88%"></i>
+            </div>
+
+          </article>
+
+
+
+          <article
+            class="skill-card spotlight reveal delay-1">
+
+            <div class="skill-head">
+
+              <span class="skill-num">
+                02
+              </span>
+
+              <span class="skill-icon">
+                ✦
+              </span>
+
+            </div>
+
+            <h3>
+              Artificial Intelligence
+            </h3>
+
+            <p>
+              Exploring practical AI chatbots,
+              agents and intelligent workflows.
+            </p>
+
+            <div class="tags">
+
+              <span>AI Chatbots</span>
+              <span>AI Agents</span>
+
+            </div>
+
+            <div class="skill-bar">
+              <i style="--w:76%"></i>
+            </div>
+
+          </article>
+
+
+
+          <article
+            class="skill-card spotlight reveal delay-2">
+
+            <div class="skill-head">
+
+              <span class="skill-num">
+                03
+              </span>
+
+              <span class="skill-icon">
+                ⌁
+              </span>
+
+            </div>
+
+            <h3>
+              Cyber Security
+            </h3>
+
+            <p>
+              Security fundamentals and safer
+              thinking for digital builds.
+            </p>
+
+            <div class="tags">
+
+              <span>Fundamentals</span>
+              <span>Secure Builds</span>
+
+            </div>
+
+            <div class="skill-bar">
+              <i style="--w:82%"></i>
+            </div>
+
+          </article>
+
+
+
+          <article
+            class="skill-card spotlight reveal delay-3">
+
+            <div class="skill-head">
+
+              <span class="skill-num">
+                04
+              </span>
+
+              <span class="skill-icon">
+                ↗
+              </span>
+
+            </div>
+
+            <h3>
+              Client Focus
+            </h3>
+
+            <p>
+              Communication and delivery focused
+              on useful outcomes.
+            </p>
+
+            <div class="tags">
+
+              <span>English</span>
+              <span>Communication</span>
+              <span>Delivery</span>
+
+            </div>
+
+            <div class="skill-bar">
+              <i style="--w:90%"></i>
+            </div>
+
+          </article>
+
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- ================= SERVICES ================= -->
+
+    <section
+      class="section services"
+      id="services">
+
+      <div class="container">
+
+        <div class="services-layout">
+
+
+          <div class="section-heading reveal">
+
+            <div>
+
+              <span class="section-number">
+                04 /
+              </span>
+
+              <span class="section-label">
+                SERVICES
+              </span>
+
+            </div>
+
+
+            <h2>
+
+              From concept
+
+              <br>
+
+              to <em>
+                digital reality.
+              </em>
+
+            </h2>
+
+
+            <p class="heading-note">
+
+              Focused services for people and small teams
+              who want a modern, thoughtful digital presence.
+
+            </p>
+
+          </div>
+
+
+
+          <div class="service-list">
+
+
+            <a
+              href="#contact"
+              class="service spotlight reveal">
+
+              <span class="service-no">
+                01
+              </span>
+
+              <div>
+
+                <h3>
+                  Websites
+                </h3>
+
+                <p>
+                  Modern, responsive websites with
+                  premium interaction design.
+                </p>
+
+              </div>
+
+              <span class="service-arrow">
+                ↗
+              </span>
+
+            </a>
+
+
+
+            <a
+              href="#contact"
+              class="service spotlight reveal delay-1">
+
+              <span class="service-no">
+                02
+              </span>
+
+              <div>
+
+                <h3>
+                  AI Chatbots
+                </h3>
+
+                <p>
+                  Conversational experiences designed
+                  around real user needs.
+                </p>
+
+              </div>
+
+              <span class="service-arrow">
+                ↗
+              </span>
+
+            </a>
+
+
+
+            <a
+              href="#contact"
+              class="service spotlight reveal delay-2">
+
+              <span class="service-no">
+                03
+              </span>
+
+              <div>
+
+                <h3>
+                  AI Agents
+                </h3>
+
+                <p>
+                  Exploring agent-style workflows
+                  that automate useful tasks.
+                </p>
+
+              </div>
+
+              <span class="service-arrow">
+                ↗
+              </span>
+
+            </a>
+
+
+
+            <a
+              href="#contact"
+              class="service spotlight reveal delay-3">
+
+              <span class="service-no">
+                04
+              </span>
+
+              <div>
+
+                <h3>
+                  Security-minded Builds
+                </h3>
+
+                <p>
+                  Digital experiences created with
+                  security considerations early.
+                </p>
+
+              </div>
+
+              <span class="service-arrow">
+                ↗
+              </span>
+
+            </a>
+
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- ================= CONTACT ================= -->
+
+    <section
+      class="section contact"
+      id="contact">
+
+      <div class="container">
+
+        <div class="contact-shell reveal">
+
+
+          <div class="contact-copy">
+
+            <span class="section-label">
+              05 / CONTACT
+            </span>
+
+
+            <h2>
+
+              Have an idea?
+
+              <br>
+
+              <em>
+                Let's make it real.
+              </em>
+
+            </h2>
+
+
+            <p>
+
+              Tell me what you're building,
+              what you need, or simply where
+              you want to go next.
+
+            </p>
+
+
+            <div class="contact-links">
+
+
+              <a href="mailto:ayaankhan6765i@gmail.com">
+
+                <span>
+                  EMAIL
+                </span>
+
+                <strong>
+                  ayaankhan6765i@gmail.com
+                </strong>
+
+              </a>
+
+
+              <a href="tel:+923352929917">
+
+                <span>
+                  PHONE / WHATSAPP
+                </span>
+
+                <strong>
+                  +92 335 2929917
+                </strong>
+
+              </a>
+
+
+              <a
+                href="https://www.linkedin.com/in/ayaan-khan-28b57442"
+                target="_blank"
+                rel="noreferrer">
+
+                <span>
+                  LINKEDIN
+                </span>
+
+                <strong>
+                  ayaan-khan-28b57442 ↗
+                </strong>
+
+              </a>
+
+
+            </div>
+
+          </div>
+
+
+
+          <form
+            id="contactForm"
+            class="contact-form">
+
+
+            <label>
+
+              <span>
+                Your name
+              </span>
+
+              <input
+                id="fName"
+                type="text"
+                placeholder="John Doe"
+                required>
+
+            </label>
+
+
+            <label>
+
+              <span>
+                Your email
+              </span>
+
+              <input
+                id="fEmail"
+                type="email"
+                placeholder="john@example.com"
+                required>
+
+            </label>
+
+
+            <label>
+
+              <span>
+                Tell me about the project
+              </span>
+
+              <textarea
+                id="fMsg"
+                rows="5"
+                placeholder="I have an idea for..."
+                required></textarea>
+
+            </label>
+
+
+            <button
+              class="btn btn-primary magnetic"
+              type="submit">
+
+              Send message
+
+              <span>
+                ↗
+              </span>
+
+            </button>
+
+
+            <small class="form-note">
+
+              Your email app will open with
+              the message prepared.
+
+            </small>
+
+          </form>
+
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+
+  <!-- FOOTER -->
+
+  <footer class="footer">
+
+    <div class="container footer-inner">
+
+      <span>
+        © <span id="year"></span> Ayaan Zafar
+      </span>
+
+      <span>
+        Built with curiosity
+        <b>✦</b>
+        and a security mindset.
+      </span>
+
+      <a href="#home">
+        BACK TO TOP ↑
+      </a>
+
     </div>
-  </section>
 
-</main>
+  </footer>
 
-<!-- ================= FOOTER ================= -->
-<footer class="site-footer">
-  <div class="wrap foot">
-    <span>&copy; 2026 Ayaan Zafar</span>
-    <span>Karachi, Pakistan</span>
-  </div>
-</footer>
 
-<!-- Your JavaScript file -->
-<script src="script.js"></script>
+  <script src="script.js"></script>
+
 </body>
 </html>
