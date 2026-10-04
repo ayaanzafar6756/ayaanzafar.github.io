@@ -135,7 +135,7 @@ if (fine && !calm) {
 
 /* ================= PARTICLES (desktop only) ================= */
 const canvas = $("#particles");
-if (canvas && fine && !calm && innerWidth > 900) {
+if (canvas && !calm ) {
   const ctx = canvas.getContext("2d");
   let w = 0, h = 0, raf = 0;
 
@@ -148,7 +148,9 @@ if (canvas && fine && !calm && innerWidth > 900) {
   resize();
   addEventListener("resize", resize);
 
-  const dots = Array.from({ length: 42 }, () => ({
+  const particleCount = innerWidth < 600 ? 20 : 42;
+
+const dots = Array.from({ length: particleCount }, () => ({
     x: Math.random() * w, y: Math.random() * h,
     vx: (Math.random() - 0.5) * 0.25, vy: (Math.random() - 0.5) * 0.25
   }));
